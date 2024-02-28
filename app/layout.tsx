@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Footer, Header } from "@/components/shared";
 
 export const metadata: Metadata = {
   title: "BloggerDS | Sanity.IO",
@@ -22,8 +23,10 @@ export default function RootLayout({
           referrerPolicy="no-referrer"
         />
       </head>
-      <body className="min-h-screen bg-primary">
+      <body className="min-h-screen bg-bg">
+        <Header/>
         {children}
+        <Footer/>
       </body>
     </html>
   );
