@@ -4,3 +4,10 @@ export interface Blogs {
   description: string;
   banner: string;
 }
+
+export interface SingleBlog{
+  slug: string;
+  title: string;
+  content: any;
+  banner: string;
+}
