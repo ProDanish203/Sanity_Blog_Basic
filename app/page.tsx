@@ -1,7 +1,9 @@
 import { Card } from "@/components/cards";
 import { client } from "@/lib/sanity";
-import { blogs } from "@/utils/data";
 import { Blogs } from "@/utils/types";
+
+export const revalidate = 30
+
 
 const getBlogs = async () => {
   const query = `*[_type == 'blog'] | order(_createdAt desc){

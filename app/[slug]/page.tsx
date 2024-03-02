@@ -3,6 +3,8 @@ import Image from "next/image";
 import { SingleBlog } from "@/utils/types";
 import { PortableText } from "@portabletext/react";
 
+export const revalidate = 30
+
 const getBlog = async (slug: string) => {
   const query = `*[_type == "blog" && slug.current == "${slug}"]{
     "slug": slug.current,
@@ -15,8 +17,6 @@ const getBlog = async (slug: string) => {
   const data = await client.fetch(query);
   return data;
 };
-
-
 
 const BlogPage = async ({ params }: { params: { slug: string } }) => {
   const data: SingleBlog = await getBlog(params.slug);
